@@ -2,6 +2,7 @@ import { map } from 'lodash';
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { addTodo, doneTodo } from '../redux/actions/todos';
+import BookComponent from './books';
 
 const Home = ({todos, addTodo, doneTodo}) => {
   console.log(todos);
@@ -30,12 +31,12 @@ const Home = ({todos, addTodo, doneTodo}) => {
         <input value={text} onChange={e => setText(e.target.value)}  />
         <button onClick={() => addTodo({name: text, status: false})}>Add</button>
       </div>
+      <BookComponent />
     </>
   );
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   return {todos: state.todos}
 }
 

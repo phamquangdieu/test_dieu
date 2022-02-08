@@ -1,13 +1,10 @@
-import { filter } from "lodash";
-import store from "..";
 import { types } from "../types/books";
+let nextId = 0;
 
-const addBook = () => {
-  const data = store.getState();
-  const doneTodo = filter(data, item => item.status);
+const addBook = (book) => {
   return {
-    type: types.DONE_STATUS,
-    payload: doneTodo,
+    type: types.ADD_BOOK,
+    payload: {...book, id: nextId++},
   }
 }
 

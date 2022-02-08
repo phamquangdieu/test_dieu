@@ -1,5 +1,5 @@
 import { forEach } from "lodash";
-import store from "../";
+import {store} from "../";
 import { types } from "../types/todos";
 
 let nextId = 0;

@@ -1,7 +1,7 @@
 import { types } from "../types/books";
 
-const filterTodo = (state=[], action) => {
-  switch(action.types) {
+const books = (state=[], action) => {
+  switch(action.type) {
     case types.ADD_BOOK:
       return [...state, action.payload];
     default:
@@ -9,4 +9,4 @@ const filterTodo = (state=[], action) => {
   }
 }
 
-export default filterTodo;
+export default books;
