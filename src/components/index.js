@@ -1,14 +1,17 @@
 import { map } from 'lodash';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { connect } from 'react-redux';
+import { ThemeContext } from '../contexts/ThemeContext';
 import { addTodo, doneTodo } from '../redux/actions/todos';
 import BookComponent from './books';
 
 const Home = ({todos, addTodo, doneTodo}) => {
-  console.log(todos);
+  const {value, changeColor} = useContext(ThemeContext);
   const [text, setText] = useState('');
   return (
     <>
+      <div>{value.color ? 'Yes' : 'No'}</div>
+      <button onClick={() => changeColor()}>Click</button>
       <table>
         <tbody>
         {
